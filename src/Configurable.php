@@ -209,11 +209,12 @@ trait Configurable
     /**
      * Specify that the element should be hidden from the update view.
      *
+     * @param  \Closure|bool  $callback
      * @return $this
      */
-    public function hideWhenUpdating()
+    public function hideWhenUpdating($callback = true)
     {
-        parent::hideWhenUpdating();
+        parent::hideWhenUpdating($callback);
 
         return $this->withMeta(['hideWhenUpdating' => true]);
     }
