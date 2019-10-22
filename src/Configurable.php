@@ -196,11 +196,12 @@ trait Configurable
     /**
      * Specify that the element should be hidden from the creation view.
      *
+     * @param  \Closure|bool  $callback
      * @return $this
      */
-    public function hideWhenCreating()
+    public function hideWhenCreating($callback = true)
     {
-        parent::hideWhenCreating();
+        parent::hideWhenCreating($callback);
 
         return $this->withMeta(['hideWhenCreating' => true]);
     }
