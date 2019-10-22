@@ -222,11 +222,12 @@ trait Configurable
     /**
      * Specify that the element should be hidden from the detail view.
      *
+     * @param  \Closure|bool  $callback
      * @return $this
      */
-    public function hideFromDetail()
+    public function hideFromDetail($callback = true)
     {
-        parent::hideFromDetail();
+        parent::hideFromDetail($callback);
 
         return $this->withMeta(['hideFromDetail' => true]);
     }
